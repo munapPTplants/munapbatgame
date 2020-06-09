@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center 
+}
+
+
+#rispostaok {
+  background-color: yellow;
+  color:red;
+}
+
+#rispostano {
+  background-color: green;
+  color:blue;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+</head>
+<body>
+
+<p style="text-align:center">Ascolta audio e poi clikka la foto del protagonista? </p>
+<div class='audio-container'>
+<audio controls>
+<source src="pipistrello.mp3" type="audio/mp3">
+<source src="pipistrello.ogg" type="audio/ogg">
+<source src="pipistrello.wav" type="audio/wav">
+Il tuo browser non supporta l'elemento audio.
+</audio>
+</div>
+
+<div class="row">
+  <div class="column">
+    <img  id="prova" src="prova.jpg" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img id="prova2" src="prova.jpg" alt="Forest" style="width:100%">
+  </div>
+</div>
+
+
+<p style="text-align:center" id="rispostano"></p><p style="text-align:center" id="rispostaok"></p>
+
+<script>
+document.getElementById("prova").addEventListener("click", risposta_sbagliata);
+document.getElementById("prova2").addEventListener("click", risposta_giusta);
+
+function risposta_sbagliata() {
+  document.getElementById("rispostano").innerHTML = "<strong>Era l'altro!</strong>";
+}
+
+function risposta_giusta() {
+  document.getElementById("rispostaok").innerHTML = "<strong>Hai indovinato!</strong>";
+}
+</script>
+
+</body>
+<html>
+
+</body>
+</html>
+
