@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/munapbatgame.js"></script>
+ 
+
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center 
+}
+
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+</head>
+<body>
+<div class='audio-container'>
+<audio controls>
+<source id="canto" src="" type="audio/mp3">
+Il tuo browser non supporta l'elemento audio.
+</audio>
+</div>
+</div>
+<div class="row">
+  <div class="column">
+    <img id="q" src="" alt="Prima specie" width="100%" height="270">
+  </div>
+  <div class="column">
+    <img id="q2" src="" alt="Seconda specie" width="100%" height="270">
+  </div>
+</div>
+<script>
+document.getElementById("canto").src=sounds[6];
+document.getElementById("q").src=species[6];
+document.getElementById("q2").src=species[3];
+</script>
+</body>
+</html>
+
