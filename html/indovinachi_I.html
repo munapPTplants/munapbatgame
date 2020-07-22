@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../js/munapbatgame.js"></script>
+<script src="../js/jquery.min.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center 
+}
+
+.grid-container {
+ display: grid;
+          
+grid-template-rows: 150px 150px 150px;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 20px;
+
+}
+
+img{
+    width: 100%;
+    object-fit: cover;
+    height: 150px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+</head>
+<body>
+
+<div class="grid-container">
+  <div class="grid-item"><a onclick="stopAudios();audio_0.play();"><img id="i1" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_1.play();"><img id="i2" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_2.play();"><img id="i3" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_3.play();"><img id="i4" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_4.play();"><img id="i5" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_5.play();"><img id="i6" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_6.play();"><img id="i7" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_7.play();"><img id="i8" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_8.play();"><img id="i9" src="" ></a></div>
+</div> 
+
+
+
+<script>
+document.getElementById("i1").src=species[0];
+document.getElementById("i2").src=species[1];
+document.getElementById("i3").src=species[2];
+document.getElementById("i4").src=species[3];
+document.getElementById("i5").src=species[4];
+document.getElementById("i6").src=species[5];
+document.getElementById("i7").src=species[6];
+document.getElementById("i8").src=species[7];
+document.getElementById("i9").src=species[8];
+
+function stopAudios() {
+    audio_0.pause();
+    audio_0.currentTime = 0;
+    audio_1.pause();
+    audio_1.currentTime = 0;
+    audio_2.pause();
+    audio_2.currentTime = 0;
+    audio_3.pause();
+    audio_3.currentTime = 0;
+    audio_4.pause();
+    audio_4.currentTime = 0;
+    audio_5.pause();
+    audio_5.currentTime = 0;
+    audio_6.pause();
+    audio_6.currentTime = 0;
+    audio_7.pause();
+    audio_7.currentTime = 0;
+    audio_8.pause();
+    audio_8.currentTime = 0;
+};
+
+</script>
+</body>
+</html>
+

@@ -4,11 +4,11 @@
 <title>MunapBatGame</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="css/bootstrap.min.css" rel="stylesheet"/>
 <script src="js/jquery.min.js"></script>
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
 <script src="js/bootstrap.min.js"></script>
-<script> var idquestion=0;
-         var nquestion=1;
+<script> var idquestion = 0;
+         var nquestion=0;
          var id_vote=0;
          var resps=[1,2,1,2,1,2,1,2,1];
          function isOdd(num) { return num % 2;};
@@ -61,7 +61,6 @@ footer{
 
 iframe {
     width: 100%;
-    height: 415px;
     margin: 0 auto;
     background-color: yellow;
 
@@ -73,7 +72,9 @@ iframe {
  }
 
 
+
 .button {
+
   background-color: darkgray;
   border: none;
   color: black;
@@ -107,144 +108,24 @@ h1.start {
 }
 </style>
 </head>
-<body onload="init()">
+<body>
 <div id="containerIntro">
     <h1 class="start">MunapBatGame<br></h1>
     <p id="pintro" class="start">Indovina la specie dal suo canto!</p>
-</div>
-<p style="text-align:center" id="QR"></p></div>
-<p id="help" style="text-align:center;font-size: 25px;"> <strong><i>Ascolta e fai click su chi è ? </i></strong></p>  
-<div id="buttons"> 
-<button id="Qs" class="button">Lui</button>o forse 
-<button id="Qg" class="button">Lui</button>?
+    <iframe width="100%" height="600px" src="html/indovinachi_I.html"  frameborder="0"  allowfullscreen></iframe>
+   <div id="buttonQ" style="text-align:center;"> 
+   <button id="beginQ" class="button">Inizia domande!</button>
 </div>   
-
-<div id="quiz" class="carousel slide" data-ride="carousel" data-interval="false">
-          <div class="carousel-inner"  role="listbox">
-            <div class="carousel-item active align-self-center">
-                    <iframe width="80%" height="300px" src="html/indovinachi_Q1.html"  frameborder="0"  allowfullscreen></iframe>
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="300px" src="html/indovinachi_Q2.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="300px" src="html/indovinachi_Q3.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="300px" src="html/indovinachi_Q4.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="300px" src="html/indovinachi_Q5.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="300px" src="html/indovinachi_Q6.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="300px" src="html/indovinachi_Q7.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="315px" src="html/indovinachi_Q8.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-            <div class="carousel-item">
-                    <iframe width="80%" height="315px" src="html/indovinachi_Q9.html"  frameborder="0"  allowfullscreen></iframe>
-
-            </div>
-       </div>
-       <!--   <a id="prevcur" class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-     </a>...-->  
-     <a id="nextcur" class="carousel-control-next" href="#quiz" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-     </a>
 </div>
 
 <a href="mailto:simvergati@gmail.com">Munap IBE CNR</a><br> I contenuti sono rilasciati in  licenza <a rel="license" href="http://creativecommons.org/licenses/by/3.0/it/"><img alt="Licenza Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/it/80x15.png" /></a><br/><a rel="license" href="http://creativecommons.org/licenses/by/3.0/it/">Creative Commons Attribuzione 3.0 Italia</a>.
-
-
 <script>
 
-document.getElementById("nextcur").addEventListener("click", clean);
-document.getElementById("Qs").addEventListener("click", r_Qs);
-document.getElementById("Qg").addEventListener("click", r_Qd);
-
-function init() {
-  document.getElementById("QR").innerHTML = "";
+document.getElementById("beginQ").addEventListener("click", init_Q);
+function init_Q() {
+window.location.href = "indexQ.htm";
 }
-
-function clean() {
-  window.frames[parseInt(idquestion)].location="";
- 
-  
- if ( id_vote >= 0 && nquestion === 9 )  
-      { document.getElementById("buttons").innerHTML ='<img src="images/d5.jpg" width="100%">';
-       document.getElementById("quiz").innerHTML="";
-       document.getElementById("QR").innerHTML="";
-       document.getElementById("help").innerHTML="";
-       document.getElementById("pintro").innerHTML =  "<br> Risposte corrette: "+ id_vote+" su " + nquestion+" domande.";};
- if ( id_vote > 5  &&  nquestion === 9)  
-       { document.getElementById("buttons").innerHTML ='<img src="images/d6.jpg" width="100%">';
-         document.getElementById("quiz").innerHTML="";
-         document.getElementById("QR").innerHTML="";
-         document.getElementById("help").innerHTML="";
-         document.getElementById("pintro").innerHTML = "<br> Risposte corrette: "+ id_vote+" su " + nquestion+" domande.";};
- if ( id_vote > 7 &&  nquestion  === 9)  
-       { document.getElementById("buttons").innerHTML ='<img src="images/d8.jpg" width="100%">';
-         document.getElementById("quiz").innerHTML="";
-         document.getElementById("QR").innerHTML="";
-         document.getElementById("help").innerHTML="";
-         document.getElementById("pintro").innerHTML = "<br> Risposte corrette: "+ id_vote+" su " + nquestion+" domande.";};
- if ( id_vote > 8 &&  nquestion  === 9) 
-       { document.getElementById("buttons").innerHTML ='<img src="images/d10.jpg" width="100%">';
-         document.getElementById("quiz").innerHTML="";
-         document.getElementById("QR").innerHTML="";
-         document.getElementById("help").innerHTML="";
-         document.getElementById("pintro").innerHTML = "<br> Risposte corrette: "+ id_vote+" su " + nquestion + " domande.";
-       } 
- else  {
-        document.getElementById("QR").innerHTML = "";
-        document.getElementById("pintro").innerHTML = "<br> Risposte corrette: "+ id_vote+" su " + nquestion+" domande.";
-        document.getElementById("Qg").disabled = false; 
-        document.getElementById("Qs").disabled = false;
-        };
-       nquestion=nquestion+1;
-       idquestion=idquestion+1;
-
-  }
-
-function r_Qs() {
- 
- if ( isOdd(parseInt(idquestion)) === 0 ) { document.getElementById("QR").innerHTML = "<br><p style=\"color: red; background-color: yellow;\"><strong>Hai indovinato!</strong>";id_vote=id_vote+1;}
-  else {
-  document.getElementById("QR").innerHTML = "<br><p style=\"color:blue; background-color:green;\"><strong>Era l'altro!</strong></p>";
-};
-
-  document.getElementById("Qg").disabled = true; 
-  document.getElementById("Qs").disabled = true; 
-  
-}
-
-function r_Qd() {
- if ( isOdd(parseInt(idquestion)) === 0 ) { document.getElementById("QR").innerHTML ="<br><p style=\"color:blue; background-color:green;\"><strong>Era l'altro!</strong></p>"; }
-  else {
-  document.getElementById("QR").innerHTML = "<br><p style=\"color: red; background-color: yellow;\"><strong>Hai indovinato!</strong>";
-  id_vote=id_vote+1;};
-
-  document.getElementById("Qg").disabled = true; 
-  document.getElementById("Qs").disabled = true; 
-  
-}
-
-</script> 
-
+</script>
 </body>
 </html>
 
