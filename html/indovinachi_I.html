@@ -24,11 +24,10 @@
 }
 
 .grid-container {
- display: grid;
-          
+display: grid;
 grid-template-rows: 150px 150px 150px;
 grid-template-columns: repeat(3, 1fr);
-grid-gap: 20px;
+grid-gap: 25px;
 
 }
 
@@ -37,6 +36,13 @@ img{
     object-fit: cover;
     height: 150px;
 }
+
+p { margin:0;
+    color:blue;
+    font-size:10px;
+}
+
+
 /* Clearfix (clear floats) */
 .row::after {
   content: "";
@@ -49,15 +55,15 @@ img{
 <body>
 
 <div class="grid-container">
-  <div class="grid-item"><a onclick="stopAudios();audio_0.play();"><img id="i1" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_1.play();"><img id="i2" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_2.play();"><img id="i3" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_3.play();"><img id="i4" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_4.play();"><img id="i5" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_5.play();"><img id="i6" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_6.play();"><img id="i7" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_7.play();"><img id="i8" src="" ></a></div>
-  <div class="grid-item"><a onclick="stopAudios();audio_8.play();"><img id="i9" src="" ></a></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_0.play();"><img id="i1" src="" ></a><p id="name1" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_1.play();"><img id="i2" src="" ></a><p id="name2" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_2.play();"><img id="i3" src="" ></a><p id="name3" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_3.play();"><img id="i4" src="" ></a><p id="name4" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_4.play();"><img id="i5" src="" ></a><p id="name5" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_5.play();"><img id="i6" src="" ></a><p id="name6" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_6.play();"><img id="i7" src="" ></a><p id="name7" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_7.play();"><img id="i8" src="" ></a><p id="name8" align=center></p></div>
+  <div class="grid-item"><a onclick="stopAudios();audio_8.play();"><img id="i9" src="" ></a><p id="name9" align=center></p></div>
 </div> 
 
 
@@ -72,6 +78,16 @@ document.getElementById("i6").src=species[5];
 document.getElementById("i7").src=species[6];
 document.getElementById("i8").src=species[7];
 document.getElementById("i9").src=species[8];
+
+document.getElementById("name1").innerHTML=specie_names[0];
+document.getElementById("name2").innerHTML=specie_names[1];
+document.getElementById("name3").innerHTML=specie_names[2];
+document.getElementById("name4").innerHTML=specie_names[3];
+document.getElementById("name5").innerHTML=specie_names[4];
+document.getElementById("name6").innerHTML=specie_names[5];
+document.getElementById("name7").innerHTML=specie_names[6];
+document.getElementById("name8").innerHTML=specie_names[7];
+document.getElementById("name9").innerHTML=specie_names[8];
 
 function stopAudios() {
     audio_0.pause();

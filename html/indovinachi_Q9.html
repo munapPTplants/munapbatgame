@@ -42,18 +42,23 @@ Il tuo browser non supporta l'elemento audio.
 </audio>
 </div>
 </div>
+
 <div class="row">
   <div class="column">
     <img id="q" src="" alt="Prima specie" width="100%" height="270">
+    <p id="nameq" align=center></p> 
   </div>
   <div class="column">
     <img id="q2" src="" alt="Seconda specie" width="100%" height="270">
+    <p id="nameq2" align=center></p> 
   </div>
 </div>
 <script>
 document.getElementById("canto").src=sounds[8];
 document.getElementById("q").src=species[8];
 document.getElementById("q2").src=species[5];
+document.getElementById("nameq").innerHTML=specie_names[8];
+document.getElementById("nameq2").innerHTML=specie_names[5];
 </script>
 </body>
 </html>
