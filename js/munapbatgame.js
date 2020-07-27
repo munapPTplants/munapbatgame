@@ -77,7 +77,7 @@ var soundsd= ['sounds/barbastella_barbastellus.mp3',
              'sounds/rhinolophus_hipposideros.mp3',
              'sounds/tadarida_teniotis.mp3']
 
-var specie_names=['Bbarbastella barbastellus ',
+var specie_names=['Barbastella barbastellus ',
                   'Hypsugo savii',
                   'Myotis daubentonii',
                   'Myotis myotis',
